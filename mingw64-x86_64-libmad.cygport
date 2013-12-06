@@ -1,0 +1,26 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libmad"
+VERSION=0.15.1b
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="MPEG audio decoder library for Win64 toolchain"
+DESCRIPTION="MAD (libmad) is a high-quality MPEG audio decoder. It currently
+supports MPEG-1 and the MPEG-2 extension to Lower Sampling Frequencies, as
+well as the so-called MPEG 2.5 format. All three audio layers (Layer I,
+Layer II, and Layer III a.k.a. MP3) are fully implemented."
+HOMEPAGE="http://www.underbit.com/products/mad/"
+SRC_URI="mirror://sourceforge/mad/libmad-${VERSION}.tar.gz"
+SRC_DIR="libmad-${VERSION}"
+PATCH_URI="
+	mirror://portage/media-libs/libmad/files/libmad-0.15.1b-cflags.patch
+	mirror://portage/media-libs/libmad/files/libmad-0.15.1b-cflags-O2.patch
+	0.15.1b-no-undefined.patch
+	0.15.1b-pkgconfig.patch
+	0.15.1b-mno-cygwin.patch
+"
+
+DISTCLEANFILES="mad.pc.in"
+
+CYGCONF_ARGS="--enable-accuracy --enable-fpm=intel"

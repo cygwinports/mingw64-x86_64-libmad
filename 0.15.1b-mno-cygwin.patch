@@ -1,0 +1,28 @@
+--- origsrc/libmad-0.15.1b/configure.ac	2013-12-05 18:27:00.071795700 -0600
++++ src/libmad-0.15.1b/configure.ac	2013-12-05 18:21:22.748501900 -0600
+@@ -39,25 +39,6 @@ dnl Checks for programs.
+ AC_PROG_CC
+ AM_PROG_AS
+ 
+-if test "$GCC" = yes
+-then
+-    case "$host" in
+-	*-*-mingw*)
+-	    case "$build" in
+-		*-*-cygwin*)
+-		    CPPFLAGS="$CPPFLAGS -mno-cygwin"
+-		    LDFLAGS="$LDFLAGS -mno-cygwin"
+-		    ;;
+-	    esac
+-    esac
+-
+-dnl    case "$host" in
+-dnl	*-*-cygwin* | *-*-mingw*)
+-dnl	    LDFLAGS="$LDFLAGS -no-undefined -mdll"
+-dnl	    ;;
+-dnl    esac
+-fi
+-
+ dnl Support for libtool.
+ 
+ dnl AC_DISABLE_SHARED
