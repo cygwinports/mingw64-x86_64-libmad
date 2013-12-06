@@ -23,4 +23,4 @@ PATCH_URI="
 
 DISTCLEANFILES="mad.pc.in"
 
-CYGCONF_ARGS="--enable-accuracy --enable-fpm=intel"
+CYGCONF_ARGS="--enable-accuracy --enable-fpm=64bit"
